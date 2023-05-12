@@ -1,11 +1,9 @@
 window.addEventListener('load', () => {
     const container = document.querySelector('.container');
-    container.style.opacity = '1'; // Show container immediately
+    container.classList.add('animate__animated', 'animate__fadeInUp');
 
     const items = document.querySelectorAll('.item');
-    items.forEach((item, index) => {
-        setTimeout(() => {
-            item.style.opacity = '1';
-        }, 300 * (index + 1));
+    items.forEach((item) => {
+        item.classList.add('animate__animated', 'animate__fadeInUp');
     });
 });
