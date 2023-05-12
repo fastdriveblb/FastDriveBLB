@@ -26,23 +26,23 @@ nav a:hover {
 }
 
 .container {
-	opacity: 0;
-	transform: translateY(100px);
-	transition: opacity 1s, transform 1s;
-  }
-  
-  .container.animate {
-	opacity: 1;
-	transform: translateY(0);
-  }
-  
-  .item {
-	opacity: 0;
-	transform: translateY(100px);
-	transition: opacity 1s, transform 1s;
-  }
-  
-  .container.animate .item {
-	opacity: 1;
-	transform: translateY(0);
-  }
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.item {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
