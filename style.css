@@ -27,12 +27,20 @@ nav a:hover {
 
 .container {
     opacity: 0;
+    transition: opacity 1s; /* Add transition for opacity */
 }
 
 .item {
     opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s, transform 1s;
+}
+
+.container.animate {
+    opacity: 1;
 }
 
 .container.animate .item {
     opacity: 1;
+    transform: translateY(0);
 }

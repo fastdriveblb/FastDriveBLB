@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.container');
     container.classList.add('animate__animated', 'animate__fadeInUp');
 
