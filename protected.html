@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Protected Page</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Welcome to the Protected Page</h1>
-    <p>This content is password-protected and can only be accessed with the correct password.</p>
-  </body>
+</head>
+<body>
+    <h1>Protected Page</h1>
+    <div id="messageContainer">
+        <!-- Messages will be displayed here -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'get_messages.php',
+                type: 'GET',
+                success: function(response) {
+                    var messages = JSON.parse(response);
+                    var messageList = '';
+
+                    messages.forEach(function(message) {
+                        messageList += '<p>' + message + '</p>';
+                    });
+
+                    $('#messageContainer').html(messageList);
+                }
+            });
+        });
+    </script>
+</body>
 </html>
